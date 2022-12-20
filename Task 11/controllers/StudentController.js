@@ -29,7 +29,7 @@ class StudentController {
         res.json(data);
     }
 
-    delete(req, res) {
+    destroy(req, res) {
         const {id} = req.params;
         students.shift(id)
         const data = {
