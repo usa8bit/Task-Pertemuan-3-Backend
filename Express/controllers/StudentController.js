@@ -1,6 +1,20 @@
-const students = require("../data/students.js")
+// import models Student
+const Student = require("../models/Student.js")
+
 class StudentController {
-    index(req, res) {
+    // callback solution
+    // index(req, res) {
+    //     Student.all(function (students) {
+    //         const data = {
+    //             message: "Menampilkan Semua Students",
+    //             data: students,
+    //         };
+    //     });
+    //     res.json(data);
+
+    // async await solution
+    async index(req, res) {
+        const students = await Student.all();
         const data = {
             message: "Menampilkan Semua Students",
             data: students,
